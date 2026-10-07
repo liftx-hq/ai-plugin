@@ -2,9 +2,9 @@
 
 The Liftx plugin connects Claude to Liftx for trading review and explicitly authorized position management. It contains two skills and one remote MCP configuration. Execution, permissions, subscription eligibility and command receipts remain owned by Liftx.
 
-**Availability:** this package is prepared for release. Hosted OAuth/MCP access must pass release qualification before it is advertised as available. Installing these files does not activate Liftx MCP or grant trading access. This repository is maintained by Liftx; no Anthropic directory listing, review or endorsement is claimed.
+Connect with personal OAuth access and choose the account scope and permissions in Liftx. Installing the plugin does not grant trading access. This repository is maintained by Liftx; no Anthropic directory listing, review or endorsement is claimed.
 
-## Install when released
+## Install
 
 In Claude Code:
 
@@ -28,6 +28,8 @@ Examples:
 
 Read results are observations, not execution guarantees. Acceptance, handoff or `execution_observed` does not prove a fill, completed modification, or flat exposure. An uncertain command is never retried under a new identity or compensated automatically.
 
-Claude also documents [custom plugin upload](https://support.claude.com/en/articles/13837440-use-plugins-in-claude). Use only an official reviewed Liftx release archive when available. Public GitHub marketplace installation in Claude Code is distinct from organization repository syncing; the latter currently requires a private/internal repository. Where only custom remote connectors are supported, add the same MCP URL using that client's connector settings; this does not install the bundled skills. Check current client support and organizational policy.
+Claude also documents [custom plugin upload](https://support.claude.com/en/articles/13837440-use-plugins-in-claude). Use only an official Liftx plugin archive. Public GitHub marketplace installation in Claude Code is distinct from organization repository syncing; the latter currently requires a private/internal repository. Where only custom remote connectors are supported, add the same MCP URL using that client's connector settings; this does not install the bundled skills. Check current client support and organizational policy.
+
+Use **MCP** in [Liftx Integrations](https://app.liftx.io/settings/integrations) to inspect or disconnect an authorized client. The header’s **Events** button opens command receipts; acceptance does not establish a fill or closure. See [connection management](SETUP.md#connections-and-command-evidence-in-liftx).
 
 See [security](SECURITY.md), [release notes](CHANGELOG.md) and [Liftx documentation](https://docs.liftx.io). General support: support@liftx.io.
