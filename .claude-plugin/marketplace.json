@@ -1,0 +1,16 @@
+{
+  "name": "liftx",
+  "owner": {
+    "name": "Liftx",
+    "email": "support@liftx.io"
+  },
+  "plugins": [
+    {
+      "name": "liftx",
+      "source": "./"
+    }
+  ],
+  "metadata": {
+    "description": "Liftx trading review and explicitly authorized position management through the Liftx MCP connector."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "liftx",
+  "displayName": "Liftx",
+  "version": "0.1.0",
+  "description": "Review trading exposure and manage explicitly authorized Liftx positions through the hosted Liftx MCP connector.",
+  "author": {
+    "name": "Liftx",
+    "email": "support@liftx.io",
+    "url": "https://liftx.io"
+  },
+  "homepage": "https://docs.liftx.io",
+  "repository": "https://github.com/liftx-hq/ai-plugin",
+  "license": "MIT",
+  "keywords": ["trading", "positions", "risk", "mcp"]
+}
