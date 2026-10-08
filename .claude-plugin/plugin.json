@@ -1,8 +1,8 @@
 {
   "name": "liftx",
   "displayName": "Liftx",
-  "version": "0.1.2",
-  "description": "Review trading exposure and manage explicitly authorized Liftx positions through the hosted Liftx MCP connector.",
+  "version": "0.2.0",
+  "description": "Research markets and trading risk, review exposure, and manage explicitly authorized positions through the hosted Liftx MCP connector.",
   "author": {
     "name": "Liftx",
     "email": "support@liftx.io",
@@ -13,6 +13,7 @@
   "license": "MIT",
   "keywords": [
     "trading",
+    "research",
     "positions",
     "risk",
     "mcp"

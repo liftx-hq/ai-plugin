@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Added the research skill for sourced market insights, scenarios, portfolio risk, performance analysis and cost-aware proposals without execution.
+- Research uses the hosted `liftx_research_sources` framework instead of maintaining a separate strategy prompt in the plugin.
+- Kept current-state review and explicitly authorized management separate; research has no preset personal trading parameters, provider credentials or implicit data access.
+
 ## 0.1.2
 
 - Updated Claude installation to use **Add → Add marketplace → Add from a repository**, alongside the Claude Code installation path.

@@ -1,6 +1,6 @@
 # Liftx for Claude
 
-The Liftx plugin connects Claude to Liftx for trading review and explicitly authorized position management. It contains two skills and one remote MCP configuration. Execution, permissions, subscription eligibility and command receipts remain owned by Liftx.
+The Liftx plugin connects Claude to Liftx for market research, trading review and explicitly authorized position management. It contains three skills and one remote MCP configuration. Execution, permissions, subscription eligibility and command receipts remain owned by Liftx.
 
 Connect with personal OAuth access and choose the account scope and permissions in Liftx. All five [permission choices](SETUP.md#permissions) are available; only read starts enabled. Installing the plugin does not grant trading access. This repository is maintained by Liftx; no Anthropic directory listing, review or endorsement is claimed.
 
@@ -24,16 +24,21 @@ Open `/mcp`, select the Liftx plugin connector and follow the browser OAuth flow
 
 | Skill | Use |
 | --- | --- |
+| `/liftx:research` | Develop sourced market insights, competing scenarios, portfolio risk and performance analysis, or a cost-aware trade proposal without executing it. |
 | `/liftx:review` | Inspect current positions, attached orders, protections and receipts; explain exposure and gaps without trading. |
 | `/liftx:manage` | Prepare an exact position action, obtain explicit approval, submit once and report its durable receipt. User invocation is required. |
 
 Examples:
 
+- “Research the market I specify for my chosen horizon. Compare competing scenarios, cite current evidence and explain when waiting is preferable.”
+- “`/liftx:research` Analyze my selected account's trading performance over the period I specify. Separate fees and funding, flag gaps and suggest improvements without trading.”
 - “Review my demo positions and identify any missing or pending protection.”
 - “Explain why this command is unresolved without retrying the trade.”
 - “`/liftx:manage` Prepare a stop adjustment for this exact position, then show me the change before submitting.”
 
 Read results are observations, not execution guarantees. Acceptance, handoff or `execution_observed` does not prove a fill, completed modification, or flat exposure. An uncertain command is never retried under a new identity or compensated automatically.
+
+Research uses the shared workflow returned by `liftx_research_sources`; it adapts to the user's market, horizon and constraints. The action returns guidance and official source references, not live provider data. Current market observations require tools or browsing already available and authorized in Claude. Missing data limits the conclusion; private Liftx data stays out of provider requests. See the [research guide](https://docs.liftx.io/mcp/research-sources).
 
 See [Claude's plugin guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude) for supported clients and organization marketplace policies. To connect without the bundled skills, follow the [remote connector instructions](https://docs.liftx.io/mcp/claude#remote-connector).
 
