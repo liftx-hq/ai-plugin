@@ -2,11 +2,18 @@
 
 The Liftx plugin connects Claude to Liftx for trading review and explicitly authorized position management. It contains two skills and one remote MCP configuration. Execution, permissions, subscription eligibility and command receipts remain owned by Liftx.
 
-Connect with personal OAuth access and choose the account scope and permissions in Liftx. Installing the plugin does not grant trading access. This repository is maintained by Liftx; no Anthropic directory listing, review or endorsement is claimed.
+Connect with personal OAuth access and choose the account scope and permissions in Liftx. All five [permission choices](SETUP.md#permissions) are available; only read starts enabled. Installing the plugin does not grant trading access. This repository is maintained by Liftx; no Anthropic directory listing, review or endorsement is claimed.
 
 ## Install
 
-In Claude Code:
+### Claude
+
+1. Open [Customize → Plugins](https://claude.ai/customize/plugins), then choose **Add → Add marketplace**.
+2. Choose **Add from a repository**, paste `https://github.com/liftx-hq/ai-plugin` and click **Sync**.
+3. Open **Liftx** in the marketplace and click **Add**.
+4. Connect the plugin's **Liftx** connector, then sign in to **Liftx** and approve your chosen access.
+
+### Claude Code
 
 ```text
 /plugin marketplace add liftx-hq/ai-plugin
@@ -28,7 +35,7 @@ Examples:
 
 Read results are observations, not execution guarantees. Acceptance, handoff or `execution_observed` does not prove a fill, completed modification, or flat exposure. An uncertain command is never retried under a new identity or compensated automatically.
 
-Claude also documents [custom plugin upload](https://support.claude.com/en/articles/13837440-use-plugins-in-claude). Use only an official Liftx plugin archive. Public GitHub marketplace installation in Claude Code is distinct from organization repository syncing; the latter currently requires a private/internal repository. Where only custom remote connectors are supported, add the same MCP URL using that client's connector settings; this does not install the bundled skills. Check current client support and organizational policy.
+See [Claude's plugin guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude) for supported clients and organization marketplace policies. To connect without the bundled skills, follow the [remote connector instructions](https://docs.liftx.io/mcp/claude#remote-connector).
 
 Use **MCP** in [Liftx Integrations](https://app.liftx.io/settings/integrations) to inspect or disconnect an authorized client. The header’s **Events** button opens command receipts; acceptance does not establish a fill or closure. See [connection management](SETUP.md#connections-and-command-evidence-in-liftx).
 
